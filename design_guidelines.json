@@ -1,0 +1,183 @@
+{
+  "project_name": "ABFLOWGENIX — Flow Measurement & Industrial Automation",
+  "app_type": "marketing_site_and_b2b_catalogue",
+  "theme_preference": "light_base_with_dark_navy_signature_sections",
+  "brand_identity": {
+    "brand_name": "ABFLOWGENIX",
+    "tagline": "Precision in Every Flow",
+    "industry": "Flow Measurement & Industrial Automation Instrumentation",
+    "logo_badge_url": "https://customer-assets-v7afamib.emergentagent.net/job_eac069dd-d1b6-4200-84ca-b5c120cdac88/artifacts/f7830fa73ef8d80c_ab_flowgenix_logo.webp",
+    "logo_wordmark_url": "https://customer-assets-v7afamib.emergentagent.net/job_eac069dd-d1b6-4200-84ca-b5c120cdac88/artifacts/a47658e46d1116dd_WhatsApp%20Image%202026-10-01%20at%208.56.06%20PM.jpeg",
+    "design_archetype": "The Performance Pro & Industrial Precision (Inspired by Endress+Hauser, Krohne & Siemens)",
+    "visual_tone": "Authoritative, highly precise, premium engineering craft, clean, un-cluttered"
+  },
+  "typography": {
+    "primary_font": "Manrope, sans-serif",
+    "heading_font": "Manrope, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "font_weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800
+    },
+    "hierarchy": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900",
+      "h3_card": "text-xl sm:text-2xl font-semibold tracking-tight text-slate-900",
+      "h4_sub": "text-lg sm:text-xl font-medium text-slate-800",
+      "body_large": "text-lg text-slate-600 leading-relaxed",
+      "body": "text-base text-slate-600 leading-relaxed",
+      "overline": "text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600"
+    }
+  },
+  "colors": {
+    "navy_primary": "#0B192C",
+    "navy_dark": "#070F1B",
+    "navy_light": "#1E293B",
+    "brand_gold": "#C8961E",
+    "brand_gold_hover": "#B38217",
+    "cyan_accent": "#06B6D4",
+    "cyan_glow": "rgba(6, 182, 212, 0.15)",
+    "steel_grey": "#64748B",
+    "slate_body": "#334155",
+    "slate_light": "#F8FAFC",
+    "border_subtle": "#E2E8F0",
+    "border_dark": "#1E293B",
+    "white": "#FFFFFF"
+  },
+  "layout_and_spacing": {
+    "header_height": "h-20",
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-16 md:py-24",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8",
+    "card_padding": "p-6 md:p-8",
+    "border_radius": "rounded-lg"
+  },
+  "hero_section_spec": {
+    "background": "bg-[#0B192C] text-white relative overflow-hidden",
+    "motion_reveal": "Line-by-line staggered reveal using Framer Motion (opacity 0 -> 1, y 30 -> 0)",
+    "tagline_eyebrow": "ENGINEERING EXCELLENCE IN FLOW MEASUREMENT",
+    "headline": "Precision Instrumentation & Process Automation Solutions",
+    "subtext": "High-accuracy flow meters, calibration services, testing instruments, and industrial audits engineered for Oil & Gas, Chemicals, Water Treatment, and Manufacturing.",
+    "cta_buttons": [
+      {
+        "text": "Explore Catalogue",
+        "href": "/products",
+        "style": "bg-[#C8961E] hover:bg-[#B38217] text-white font-semibold px-7 py-3.5 rounded-md shadow-lg transition-all"
+      },
+      {
+        "text": "Request Quotation",
+        "href": "/contact",
+        "style": "border border-cyan-500/40 hover:bg-cyan-500/10 text-cyan-400 font-semibold px-7 py-3.5 rounded-md transition-all"
+      }
+    ]
+  },
+  "catalogue_spec": {
+    "categories": [
+      {
+        "id": "thermal-mass",
+        "name": "Thermal Mass Flowmeters",
+        "description": "Direct gas mass flow measurement with high turn-down ratio and zero pressure drop."
+      },
+      {
+        "id": "electromagnetic",
+        "name": "Electromagnetic Flowmeters",
+        "description": "Obstructionless flow measurement for conductive liquids, slurries, and aggressive fluids."
+      },
+      {
+        "id": "oval-gear",
+        "name": "Oval Gear Flowmeters",
+        "description": "Positive displacement meters engineered for high-viscosity oils, fuels, and lubricants."
+      },
+      {
+        "id": "turbine",
+        "name": "Turbine Flowmeters",
+        "description": "High-precision volumetric measurement for low-viscosity liquids and cryogenic fluids."
+      },
+      {
+        "id": "vortex",
+        "name": "Vortex Flowmeters",
+        "description": "Versatile flow measurement for steam, gases, and low-viscosity liquids across extreme temperatures."
+      },
+      {
+        "id": "ultrasonic",
+        "name": "Ultrasonic Flowmeters",
+        "description": "Non-intrusive transit-time and Doppler clamp-on meters for clean or contaminated fluids."
+      }
+    ],
+    "features": [
+      "Client-side Live Search",
+      "Filter by Category Pills & Application tags",
+      "Sort by Popularity / Model / Accuracy class",
+      "Interactive Technical Specification Tables",
+      "One-click Add to Quote Cart"
+    ]
+  },
+  "media_urls": {
+    "brand": {
+      "badge_logo": "https://customer-assets-v7afamib.emergentagent.net/job_eac069dd-d1b6-4200-84ca-b5c120cdac88/artifacts/f7830fa73ef8d80c_ab_flowgenix_logo.webp",
+      "wordmark_logo": "https://customer-assets-v7afamib.emergentagent.net/job_eac069dd-d1b6-4200-84ca-b5c120cdac88/artifacts/a47658e46d1116dd_WhatsApp%20Image%202026-10-01%20at%208.56.06%20PM.jpeg"
+    },
+    "hero": {
+      "industrial_refinery": "https://images.unsplash.com/photo-1516937941344-00b4e0337589?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxvaWwlMjByZWZpbmVyeSUyMGNoZW1pY2FsJTIwcGxhbnQlMjBpbmR1c3RyaWFsJTIwYXV0b21hdGlvbiUyMHBpcGV8ZW58MHx8fHwxNzkyNjY5MTQxfDA&ixlib=rb-4.1.0&q=85",
+      "pipes_valves": "https://images.pexels.com/photos/5532838/pexels-photo-5532838.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "product_categories": {
+      "thermal_mass": "https://images.pexels.com/photos/39317578/pexels-photo-39317578.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "electromagnetic": "https://images.unsplash.com/photo-1738918922725-d70c666ddccb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHw0fHx3YXRlciUyMHRyZWF0bWVudCUyMHBsYW50JTIwcG93ZXIlMjBwbGFudCUyMGluZHVzdHJpYWwlMjBmYWNpbGl0eXxlbnwwfHx8fDE3OTI2NjkxNDF8MA&ixlib=rb-4.1.0&q=85",
+      "oval_gear": "https://images.pexels.com/photos/7018177/pexels-photo-7018177.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "turbine": "https://images.unsplash.com/photo-1705147219565-fe9f6f369d03?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwxfHx3YXRlciUyMHRyZWF0bWVudCUyMHBsYW50JTIwcG93ZXIlMjBwbGFudCUyMGluZHVzdHJpYWwlMjBmYWNpbGl0eXxlbnwwfHx8fDE3OTI2NjkxNDF8MA&ixlib=rb-4.1.0&q=85",
+      "vortex": "https://images.unsplash.com/photo-1726731782158-fcf6822b6ca4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHszfHxvaWwlMjByZWZpbmVyeSUyMGNoZW1pY2FsJTIwcGxhbnQlMjBpbmR1c3RyaWFsJTIwYXV0b21hdGlvbiUyMHBpcGV8ZW58MHx8fHwxNzkyNjY5MTQxfDA&ixlib=rb-4.1.0&q=85",
+      "ultrasonic": "https://images.pexels.com/photos/3862631/pexels-photo-3862631.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "industries": {
+      "oil_and_gas": "https://images.pexels.com/photos/15970032/pexels-photo-15970032.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "water_treatment": "https://images.pexels.com/photos/12634302/pexels-photo-12634302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "chemical_processing": "https://images.unsplash.com/photo-1678532685208-54acdd41187d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHw0fHxvaWwlMjByZWZpbmVyeSUyMGNoZW1pY2FsJTIwcGxhbnQlMjBpbmR1c3RyaWFsJTIwYXV0b21hdGlvbiUyMHBpcGV8ZW58MHx8fHwxNzkyNjY5MTQxfDA&ixlib=rb-4.1.0&q=85",
+      "power_energy": "https://images.unsplash.com/photo-1768128834406-f5b1b962af9d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwyfHx3YXRlciUyMHRyZWF0bWVudCUyMHBsYW50JTIwcG93ZXIlMjBwbGFudCUyMGluZHVzdHJpYWwlMjBmYWNpbGl0eXxlbnwwfHx8fDE3OTI2NjkxNDF8MA&ixlib=rb-4.1.0&q=85"
+    },
+    "services": {
+      "calibration": "https://images.pexels.com/photos/3862631/pexels-photo-3862631.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "testing_instruments": "https://images.pexels.com/photos/7018177/pexels-photo-7018177.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "manpower": "https://images.pexels.com/photos/5532838/pexels-photo-5532838.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "audits": "https://images.unsplash.com/photo-1588011930968-eadac80e6a5a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwyfHxvaWwlMjByZWZpbmVyeSUyMGNoZW1pY2FsJTIwcGxhbnQlMjBpbmR1c3RyaWFsJTIwYXV0b21hdGlvbiUyMHBpcGV8ZW58MHx8fHwxNzkyNjY5MTQxfDA&ixlib=rb-4.1.0&q=85"
+    }
+  },
+  "quotation_workflow": {
+    "type": "Client-side interactive quote generator",
+    "features": [
+      "Product specification summary inclusion",
+      "Dynamic mailto string builder with pre-filled items",
+      "One-click WhatsApp quote message link generation",
+      "Form validation with instant feedback"
+    ]
+  },
+  "testing_requirements": {
+    "rule": "All key interactive elements and data points MUST include data-testid attributes in kebab-case format.",
+    "examples": [
+      "data-testid=\"nav-logo\"",
+      "data-testid=\"nav-products-link\"",
+      "data-testid=\"hero-cta-quote-button\"",
+      "data-testid=\"product-search-input\"",
+      "data-testid=\"category-filter-electromagnetic\"",
+      "data-testid=\"product-card-ab-1000\"",
+      "data-testid=\"quote-submit-button\""
+    ]
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "You MUST NOT apply universal transition. Eg: transition: all. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons. Use Lucide or Phosphor icons",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "All interactive and key informational elements MUST include data-testid attribute"
+  ]
+}
