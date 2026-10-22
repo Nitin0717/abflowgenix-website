@@ -1,4 +1,4 @@
-import logoBadge from '../assets/brand/logo-badge.webp';
+import logoBadge from '../assets/brand/logo-badge-v2.webp';
 import { site } from '../data/site.js';
 
 export default function Logo({ dark = false }) {
