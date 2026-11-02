@@ -1,28 +1,29 @@
 import { useMemo, useState } from 'react';
-import { CheckCircle2, FileText, MessageCircle, RotateCcw } from 'lucide-react';
-import { products } from '../data/products.js';
+import { CheckCircle2, FileText, MessageCircle, Paperclip, RotateCcw } from 'lucide-react';
+import { services } from '../data/services.js';
+import { instrumentCategories } from '../data/productCategories.js';
 import { site } from '../data/site.js';
 import { buildMailto, buildWhatsApp } from '../utils/quote.js';
 
 const initial = {
   name: '',
   company: '',
+  designation: '',
+  mobile: '',
   email: '',
-  phone: '',
-  product: '',
-  medium: '',
-  pipeDiameter: '',
-  flowRange: '',
-  pressure: '',
-  temperature: '',
+  location: '',
+  service: '',
+  instrument: '',
+  application: '',
   requirements: '',
+  documentName: '',
 };
 
 const validators = {
   name: (v) => (v.trim().length >= 2 ? '' : 'Please enter your full name.'),
+  mobile: (v) => (/^[+()\-\s\d]{7,18}$/.test(v.trim()) ? '' : 'Please enter a valid mobile number.'),
   email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Please enter a valid email address.'),
-  phone: (v) => (!v.trim() || /^[+()\-\s\d]{7,18}$/.test(v.trim()) ? '' : 'Please enter a valid phone number.'),
-  product: (v) => (v ? '' : 'Please select a product or enquiry type.'),
+  service: (v) => (v ? '' : 'Please select the service required.'),
 };
 
 const inputCls = (err) =>
@@ -30,14 +31,13 @@ const inputCls = (err) =>
     err ? 'border-red-400' : 'border-slate-300 hover:border-slate-400'
   }`;
 
-function Field({ id, label, error, required, children, hint }) {
+function Field({ id, label, error, required, children }) {
   return (
     <div className="flex flex-col gap-1.5">
       <label htmlFor={id} className="text-sm font-semibold text-navy">
         {label} {required && <span className="text-gold-hover" aria-hidden="true">*</span>}
       </label>
       {children}
-      {hint && !error && <p className="text-xs text-slate-400">{hint}</p>}
       {error && (
         <p role="alert" className="text-xs font-semibold text-red-600" data-testid={`error-${id}`}>
           {error}
@@ -47,9 +47,10 @@ function Field({ id, label, error, required, children, hint }) {
   );
 }
 
-export default function QuoteForm({ initialProduct = '' }) {
-  const [f, setF] = useState({ ...initial, product: initialProduct });
+export default function QuoteForm({ initialService = '', initialInstrument = '' }) {
+  const [f, setF] = useState({ ...initial, service: initialService, instrument: initialInstrument });
   const [errors, setErrors] = useState({});
+  const [preparing, setPreparing] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const mailto = useMemo(() => buildMailto(f), [f]);
@@ -61,6 +62,11 @@ export default function QuoteForm({ initialProduct = '' }) {
     if (errors[key] && validators[key]) {
       setErrors((prev) => ({ ...prev, [key]: validators[key](value) }));
     }
+  };
+
+  const onFile = (e) => {
+    const file = e.target.files && e.target.files[0];
+    setF((prev) => ({ ...prev, documentName: file ? file.name : '' }));
   };
 
   const validate = () => {
@@ -76,8 +82,12 @@ export default function QuoteForm({ initialProduct = '' }) {
   const onSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
-    setSubmitted(true);
-    window.location.href = mailto;
+    setPreparing(true);
+    window.setTimeout(() => {
+      setPreparing(false);
+      setSubmitted(true);
+      window.location.href = mailto;
+    }, 600);
   };
 
   const reset = () => {
@@ -93,8 +103,13 @@ export default function QuoteForm({ initialProduct = '' }) {
         <h3 className="mt-4 text-xl font-bold text-navy">Your enquiry draft is ready</h3>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-600">
           Your email application should now open with a pre-filled message addressed to{' '}
-          <span className="font-semibold text-navy">{site.email}</span>. Please review and press send in your email app —
-          nothing is stored or sent automatically by this website.
+          <span className="font-semibold text-navy">{site.email}</span>. Please review and press send in your email app.
+          {f.documentName && (
+            <>
+              {' '}Remember to attach <span className="font-semibold text-navy">{f.documentName}</span> before sending.
+            </>
+          )}{' '}
+          Nothing is stored or sent automatically by this website.
         </p>
         <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
           <a
@@ -131,43 +146,63 @@ export default function QuoteForm({ initialProduct = '' }) {
       <Field id="q-name" label="Name" required error={errors.name}>
         <input id="q-name" data-testid="input-name" type="text" autoComplete="name" value={f.name} onChange={set('name')} className={inputCls(errors.name)} placeholder="Your full name" />
       </Field>
-      <Field id="q-company" label="Company" error={errors.company}>
+      <Field id="q-company" label="Company Name" error="">
         <input id="q-company" data-testid="input-company" type="text" autoComplete="organization" value={f.company} onChange={set('company')} className={inputCls(false)} placeholder="Company / organization" />
       </Field>
-      <Field id="q-email" label="Email" required error={errors.email}>
+      <Field id="q-designation" label="Designation" error="">
+        <input id="q-designation" data-testid="input-designation" type="text" autoComplete="organization-title" value={f.designation} onChange={set('designation')} className={inputCls(false)} placeholder="e.g. Maintenance Manager" />
+      </Field>
+      <Field id="q-mobile" label="Mobile Number" required error={errors.mobile}>
+        <input id="q-mobile" data-testid="input-mobile" type="tel" autoComplete="tel" value={f.mobile} onChange={set('mobile')} className={inputCls(errors.mobile)} placeholder="+91 …" />
+      </Field>
+      <Field id="q-email" label="Email Address" required error={errors.email}>
         <input id="q-email" data-testid="input-email" type="email" autoComplete="email" value={f.email} onChange={set('email')} className={inputCls(errors.email)} placeholder="you@company.com" />
       </Field>
-      <Field id="q-phone" label="Phone" error={errors.phone}>
-        <input id="q-phone" data-testid="input-phone" type="tel" autoComplete="tel" value={f.phone} onChange={set('phone')} className={inputCls(errors.phone)} placeholder="+91 …" />
+      <Field id="q-location" label="Location" error="">
+        <input id="q-location" data-testid="input-location" type="text" autoComplete="address-level2" value={f.location} onChange={set('location')} className={inputCls(false)} placeholder="City, State" />
       </Field>
-      <Field id="q-product" label="Product" required error={errors.product}>
-        <select id="q-product" data-testid="input-product" value={f.product} onChange={set('product')} className={inputCls(errors.product)}>
-          <option value="">Select a product…</option>
-          {products.map((p) => (
-            <option key={p.slug} value={p.name}>{p.name}</option>
-          ))}
-          <option value="Services / General Enquiry">Services / General Enquiry</option>
-          <option value="Not sure — need recommendation">Not sure — need recommendation</option>
+      <Field id="q-service" label="Service Required" required error={errors.service}>
+        <select id="q-service" data-testid="input-service" value={f.service} onChange={set('service')} className={inputCls(errors.service)}>
+          <option value="">Select a service…</option>
+          <optgroup label="Industrial Technical Services">
+            {services.map((s) => (
+              <option key={s.slug} value={s.name}>{s.name}</option>
+            ))}
+          </optgroup>
+          <optgroup label="Instrument Supply & Trading">
+            {instrumentCategories.map((c) => (
+              <option key={c.slug} value={`Instrument Supply — ${c.name}`}>{c.name}</option>
+            ))}
+          </optgroup>
+          <option value="General Enquiry">General Enquiry</option>
         </select>
       </Field>
-      <Field id="q-medium" label="Flow Medium" error="">
-        <input id="q-medium" data-testid="input-medium" type="text" value={f.medium} onChange={set('medium')} className={inputCls(false)} placeholder="e.g. compressed air, water, furnace oil" />
-      </Field>
-      <Field id="q-pipe" label="Pipe Diameter" error="">
-        <input id="q-pipe" data-testid="input-pipe-diameter" type="text" value={f.pipeDiameter} onChange={set('pipeDiameter')} className={inputCls(false)} placeholder="e.g. DN50 / 2 inch" />
-      </Field>
-      <Field id="q-flow" label="Flow Range" error="">
-        <input id="q-flow" data-testid="input-flow-range" type="text" value={f.flowRange} onChange={set('flowRange')} className={inputCls(false)} placeholder="e.g. 10–100 m³/h" />
-      </Field>
-      <Field id="q-pressure" label="Operating Pressure" error="">
-        <input id="q-pressure" data-testid="input-pressure" type="text" value={f.pressure} onChange={set('pressure')} className={inputCls(false)} placeholder="e.g. 6 bar" />
-      </Field>
-      <Field id="q-temperature" label="Operating Temperature" error="">
-        <input id="q-temperature" data-testid="input-temperature" type="text" value={f.temperature} onChange={set('temperature')} className={inputCls(false)} placeholder="e.g. 80 °C" />
+      <Field id="q-instrument" label="Instrument / Equipment" error="">
+        <input id="q-instrument" data-testid="input-instrument" type="text" value={f.instrument} onChange={set('instrument')} className={inputCls(false)} placeholder="e.g. flowmeter, compressor, MCC panel" />
       </Field>
       <div className="sm:col-span-2">
-        <Field id="q-requirements" label="Requirements" error="">
-          <textarea id="q-requirements" data-testid="input-requirements" rows={4} value={f.requirements} onChange={set('requirements')} className={inputCls(false)} placeholder="Tell us about your application, outputs needed, installation conditions…" />
+        <Field id="q-application" label="Application" error="">
+          <input id="q-application" data-testid="input-application" type="text" value={f.application} onChange={set('application')} className={inputCls(false)} placeholder="Where is this used? e.g. boiler house, compressed air header" />
+        </Field>
+      </div>
+      <div className="sm:col-span-2">
+        <Field id="q-requirements" label="Requirement Details" error="">
+          <textarea id="q-requirements" data-testid="input-requirements" rows={4} value={f.requirements} onChange={set('requirements')} className={inputCls(false)} placeholder="Describe your requirement — system details, standards to meet, timeline…" />
+        </Field>
+      </div>
+      <div className="sm:col-span-2">
+        <Field id="q-document" label="Upload Document" error="">
+          <label
+            htmlFor="q-document"
+            className="flex cursor-pointer items-center gap-3 rounded-md border border-dashed border-slate-300 bg-mist px-4 py-3.5 text-sm text-slate-500 transition-colors hover:border-navy hover:text-navy"
+          >
+            <Paperclip className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span data-testid="document-filename">{f.documentName || 'Attach a drawing, datasheet or photo (optional)'}</span>
+          </label>
+          <input id="q-document" data-testid="input-document" type="file" className="sr-only" onChange={onFile} />
+          <p className="mt-1.5 text-xs text-slate-400">
+            Files cannot travel through a pre-filled email — please attach the document in your email or WhatsApp before sending.
+          </p>
         </Field>
       </div>
 
@@ -175,10 +210,11 @@ export default function QuoteForm({ initialProduct = '' }) {
         <div className="flex flex-col gap-3 sm:flex-row">
           <button
             type="submit"
+            disabled={preparing}
             data-testid="quote-submit-button"
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-gold px-7 py-3.5 font-bold text-navy-dark shadow-lg shadow-gold/20 transition-colors duration-300 hover:bg-navy hover:text-white"
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-gold px-7 py-3.5 font-bold text-navy-dark shadow-lg shadow-gold/20 transition-colors duration-300 hover:bg-navy hover:text-white disabled:opacity-60"
           >
-            <FileText className="h-4 w-4" aria-hidden="true" /> Prepare Email Enquiry
+            <FileText className="h-4 w-4" aria-hidden="true" /> {preparing ? 'Preparing draft…' : 'Submit Enquiry'}
           </button>
           <a
             href={whatsapp}

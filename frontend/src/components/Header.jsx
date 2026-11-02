@@ -4,13 +4,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, FileText, Mail, MapPin, Menu, Phone, X } from 'lucide-react';
 import Logo from './Logo.jsx';
 import { nav, site } from '../data/site.js';
-import { products } from '../data/products.js';
 import { services } from '../data/services.js';
+import { instrumentCategories } from '../data/productCategories.js';
 
 const childrenFor = (key) =>
-  key === 'products'
-    ? products.map((p) => ({ label: p.name, to: `/products/${p.slug}`, hint: p.media[0] }))
-    : services.map((s) => ({ label: s.name, to: `/services/${s.slug}`, hint: 'Service' }));
+  key === 'services'
+    ? services.map((s) => ({ label: s.navLabel, to: `/services/${s.slug}`, hint: 'Service' }))
+    : instrumentCategories.map((c) => ({ label: c.name, to: `/instruments/${c.slug}`, hint: 'Instruments' }));
 
 function DesktopItem({ item }) {
   const location = useLocation();
@@ -19,9 +19,9 @@ function DesktopItem({ item }) {
       <NavLink
         to={item.to}
         end={item.to === '/'}
-        data-testid={`nav-${item.label.toLowerCase()}-link`}
+        data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, '-')}-link`}
         className={({ isActive }) =>
-          `relative px-1 py-2 text-sm font-semibold transition-colors ${
+          `relative whitespace-nowrap px-1 py-2 text-sm font-semibold transition-colors ${
             isActive ? 'text-navy' : 'text-slate-500 hover:text-navy'
           } after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 ${
             isActive ? 'after:w-full' : 'after:w-0 hover:after:w-full'
@@ -36,36 +36,33 @@ function DesktopItem({ item }) {
   const children = childrenFor(item.childrenKey);
   return (
     <div className="group relative">
-      <div className="flex items-center">
-        <NavLink
-          to={item.to}
-          data-testid={`nav-${item.label.toLowerCase()}-link`}
-          className={`relative flex items-center gap-1 px-1 py-2 text-sm font-semibold transition-colors ${
-            active ? 'text-navy' : 'text-slate-500 group-hover:text-navy'
-          } after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 ${
-            active ? 'after:w-full' : 'after:w-0 group-hover:after:w-full'
-          }`}
-        >
-          {item.label}
-          <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true" />
-        </NavLink>
-      </div>
+      <NavLink
+        to={item.to}
+        data-testid={`nav-${item.label.toLowerCase()}-link`}
+        className={`relative flex items-center gap-1 whitespace-nowrap px-1 py-2 text-sm font-semibold transition-colors ${
+          active ? 'text-navy' : 'text-slate-500 group-hover:text-navy'
+        } after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 ${
+          active ? 'after:w-full' : 'after:w-0 group-hover:after:w-full'
+        }`}
+      >
+        {item.label}
+        <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" aria-hidden="true" />
+      </NavLink>
       <div className="invisible absolute left-1/2 top-full z-50 w-80 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-        <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl shadow-navy/10">
+        <div className="max-h-[70vh] overflow-y-auto overflow-x-hidden rounded-lg border border-slate-200 bg-white shadow-xl shadow-navy/10">
           {children.map((c) => (
             <Link
               key={c.to}
               to={c.to}
               data-testid={`nav-dropdown-${c.to.split('/').pop()}`}
-              className="flex items-center justify-between gap-3 border-b border-slate-100 px-5 py-3.5 text-sm font-semibold text-slate-700 transition-colors last:border-0 hover:bg-mist hover:text-navy"
+              className="block border-b border-slate-100 px-5 py-3 text-sm font-semibold text-slate-700 transition-colors last:border-0 hover:bg-mist hover:text-navy"
             >
               {c.label}
-              <span className="font-mono text-[10px] font-normal uppercase tracking-[0.15em] text-slate-400">{c.hint}</span>
             </Link>
           ))}
           <Link
             to={item.to}
-            className="block bg-navy px-5 py-3 text-center font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-gold transition-colors hover:bg-navy-light"
+            className="sticky bottom-0 block bg-navy px-5 py-3 text-center font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-gold transition-colors hover:bg-navy-light"
           >
             View all {item.label}
           </Link>
@@ -166,7 +163,7 @@ export default function Header() {
               <MapPin className="h-3 w-3" aria-hidden="true" /> {site.address}
             </span>
             <span className="border border-gold/40 px-2 py-0.5 text-[10px] uppercase tracking-[0.2em] text-gold">
-              {site.registered}
+              Industrial Technical Services
             </span>
           </div>
         </div>
@@ -174,11 +171,11 @@ export default function Header() {
 
       <div className={`border-b bg-white/95 backdrop-blur transition-shadow duration-300 ${scrolled ? 'border-slate-200 shadow-lg shadow-navy/5' : 'border-slate-100'}`}>
         <div className="container-x flex h-20 items-center justify-between gap-6">
-          <Link to="/" aria-label="ABFLOWGENIX — home" data-testid="nav-logo">
+          <Link to="/" aria-label="AB Flowgenix — home" data-testid="nav-logo">
             <Logo />
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-5 xl:gap-6 lg:flex">
             {nav.map((item) => (
               <DesktopItem key={item.to} item={item} />
             ))}
@@ -225,7 +222,7 @@ export default function Header() {
                     key={item.to}
                     to={item.to}
                     onClick={() => setOpen(false)}
-                    data-testid={`mobile-nav-${item.label.toLowerCase()}`}
+                    data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
                     className="block border-b border-slate-100 px-1 py-4 text-base font-bold text-navy"
                   >
                     {item.label}

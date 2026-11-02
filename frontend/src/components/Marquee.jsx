@@ -1,16 +1,9 @@
-const items = [
-  'Thermal Mass',
-  'Electromagnetic',
-  'Oval Gear',
-  'Turbine',
-  'Vortex',
-  'Ultrasonic',
-];
+import { serviceHighlightStrip } from '../data/services.js';
 
-export default function Marquee() {
+export default function Marquee({ items = serviceHighlightStrip, label = 'Core services' }) {
   const row = [...items, ...items];
   return (
-    <div className="relative overflow-hidden border-y border-white/10 bg-navy-dark py-5" aria-label="Flowmeter technologies">
+    <div className="relative overflow-hidden border-y border-white/10 bg-navy-dark py-5" aria-label={label}>
       <div className="marquee-track flex w-max items-center gap-10 pr-10">
         {[0, 1].map((half) => (
           <div key={half} className="flex items-center gap-10" aria-hidden={half === 1}>

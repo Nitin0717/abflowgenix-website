@@ -2,21 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.abflowgenix.com/</loc><priority>1.0</priority></url>
   <url><loc>https://www.abflowgenix.com/about</loc><priority>0.8</priority></url>
-  <url><loc>https://www.abflowgenix.com/products</loc><priority>0.9</priority></url>
-  <url><loc>https://www.abflowgenix.com/products/thermal-mass-flowmeter</loc><priority>0.8</priority></url>
-  <url><loc>https://www.abflowgenix.com/products/electromagnetic-flowmeter</loc><priority>0.8</priority></url>
-  <url><loc>https://www.abflowgenix.com/products/oval-gear-flowmeter</loc><priority>0.8</priority></url>
-  <url><loc>https://www.abflowgenix.com/products/turbine-flowmeter</loc><priority>0.8</priority></url>
-  <url><loc>https://www.abflowgenix.com/products/vortex-flowmeter</loc><priority>0.8</priority></url>
-  <url><loc>https://www.abflowgenix.com/products/ultrasonic-flowmeter</loc><priority>0.8</priority></url>
-  <url><loc>https://www.abflowgenix.com/services</loc><priority>0.8</priority></url>
-  <url><loc>https://www.abflowgenix.com/services/calibration</loc><priority>0.7</priority></url>
-  <url><loc>https://www.abflowgenix.com/services/testing-instruments</loc><priority>0.7</priority></url>
-  <url><loc>https://www.abflowgenix.com/services/technical-manpower</loc><priority>0.7</priority></url>
-  <url><loc>https://www.abflowgenix.com/services/industrial-audits</loc><priority>0.7</priority></url>
+  <url><loc>https://www.abflowgenix.com/services</loc><priority>0.9</priority></url>
+  <url><loc>https://www.abflowgenix.com/services/compressed-air-leakage-audit</loc><priority>0.9</priority></url>
+  <url><loc>https://www.abflowgenix.com/services/flow-measurement-testing</loc><priority>0.9</priority></url>
+  <url><loc>https://www.abflowgenix.com/services/nabl-calibration</loc><priority>0.9</priority></url>
+  <url><loc>https://www.abflowgenix.com/services/thermal-imaging</loc><priority>0.9</priority></url>
+  <url><loc>https://www.abflowgenix.com/services/industrial-energy-audit</loc><priority>0.9</priority></url>
+  <url><loc>https://www.abflowgenix.com/services/power-quality-audit</loc><priority>0.9</priority></url>
+  <url><loc>https://www.abflowgenix.com/services/electrical-testing</loc><priority>0.9</priority></url>
+  <url><loc>https://www.abflowgenix.com/services/compressed-air-quality-testing</loc><priority>0.9</priority></url>
+  <url><loc>https://www.abflowgenix.com/services/process-instrument-testing</loc><priority>0.9</priority></url>
+  <url><loc>https://www.abflowgenix.com/instruments</loc><priority>0.8</priority></url>
+  <url><loc>https://www.abflowgenix.com/instruments/process-instrumentation</loc><priority>0.7</priority></url>
+  <url><loc>https://www.abflowgenix.com/instruments/flowmeters</loc><priority>0.8</priority></url>
+  <url><loc>https://www.abflowgenix.com/instruments/electrical-test-instruments</loc><priority>0.7</priority></url>
+  <url><loc>https://www.abflowgenix.com/instruments/thermal-acoustic-instruments</loc><priority>0.7</priority></url>
+  <url><loc>https://www.abflowgenix.com/products/thermal-mass-flowmeter</loc><priority>0.7</priority></url>
+  <url><loc>https://www.abflowgenix.com/products/electromagnetic-flowmeter</loc><priority>0.7</priority></url>
+  <url><loc>https://www.abflowgenix.com/products/oval-gear-flowmeter</loc><priority>0.7</priority></url>
+  <url><loc>https://www.abflowgenix.com/products/turbine-flowmeter</loc><priority>0.7</priority></url>
+  <url><loc>https://www.abflowgenix.com/products/vortex-flowmeter</loc><priority>0.7</priority></url>
+  <url><loc>https://www.abflowgenix.com/products/ultrasonic-flowmeter</loc><priority>0.7</priority></url>
   <url><loc>https://www.abflowgenix.com/industries</loc><priority>0.7</priority></url>
-  <url><loc>https://www.abflowgenix.com/resources</loc><priority>0.6</priority></url>
-  <url><loc>https://www.abflowgenix.com/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://www.abflowgenix.com/resources</loc><priority>0.5</priority></url>
+  <url><loc>https://www.abflowgenix.com/contact</loc><priority>0.9</priority></url>
   <url><loc>https://www.abflowgenix.com/privacy-policy</loc><priority>0.3</priority></url>
   <url><loc>https://www.abflowgenix.com/terms</loc><priority>0.3</priority></url>
 </urlset>

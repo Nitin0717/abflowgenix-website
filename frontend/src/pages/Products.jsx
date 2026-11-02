@@ -18,10 +18,10 @@ const selectCls =
 
 export default function Products() {
   useSEO({
-    title: 'Products',
+    title: 'Flowmeters',
     description:
-      'Browse ABFLOWGENIX flowmeters — thermal mass, electromagnetic, oval gear, turbine, vortex, and ultrasonic — with specifications and datasheets.',
-    path: '/products',
+      'Browse AB Flowgenix flowmeters — thermal mass, electromagnetic, oval gear, turbine, vortex, and ultrasonic — with specifications and datasheets.',
+    path: '/instruments/flowmeters',
   });
 
   const [query, setQuery] = useState('');
@@ -57,10 +57,10 @@ export default function Products() {
   return (
     <>
       <PageHero
-        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Products' }]}
-        eyebrow="Product Catalogue"
-        title="Precision flowmeters for every medium"
-        text="Search, filter, and compare six flowmeter technologies. Every instrument is backed by testing, calibration support, and commissioning assistance."
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Instruments', to: '/instruments' }, { label: 'Flowmeters' }]}
+        eyebrow="Instrument Supply & Trading"
+        title="Flowmeters — six measurement technologies"
+        text="Search, filter, and compare flowmeter technologies for gases, liquids, steam and viscous media. Specifications and datasheets on every product page."
       />
 
       <section className="bg-white py-14 md:py-20">
@@ -148,7 +148,7 @@ export default function Products() {
 
       <CTASection
         title="Not sure which technology fits your line?"
-        text="Send us your medium, pipe diameter, and flow range — our engineers will recommend the right measuring principle."
+        text="Send us your medium, pipe diameter, and flow range — our team will recommend the right measuring principle and instrument."
       />
     </>
   );

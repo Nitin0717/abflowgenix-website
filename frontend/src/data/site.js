@@ -1,8 +1,9 @@
 export const site = {
   name: 'ABFLOWGENIX',
+  legalName: 'AB Flowgenix',
   tagline: 'Precision in Every Flow',
   description:
-    'Industrial flow measurement, instrumentation, calibration, and engineering solutions for demanding applications.',
+    'Industrial testing, inspection, calibration and audit services for process, electrical and utility systems — plus supply of process and test & measurement instruments.',
   email: 'ABFlowgenix@gmail.com',
   phoneDisplay: '+91 82620 26048',
   phoneHref: 'tel:+918262026048',
@@ -12,182 +13,112 @@ export const site = {
   registered: 'MSME-Registered Enterprise',
 };
 
-export const stats = [
-  { value: '15+', label: 'Industries Served' },
-  { value: '25+', label: 'Projects Completed' },
-  { value: 'MSME', label: 'Registered Manufacturer' },
-  { value: '6', label: 'Flowmeter Technologies' },
-];
-
-export const capabilities = [
-  {
-    icon: 'Factory',
-    title: 'Flowmeter Manufacturing',
-    text: 'A complete range of industrial flowmeters engineered and manufactured in India to global quality standards.',
-  },
-  {
-    icon: 'Gauge',
-    title: 'Calibration Services',
-    text: 'Professional instrument calibration, on-site and in-lab, with reports traceable to NABL standards.',
-  },
-  {
-    icon: 'PackageCheck',
-    title: 'Instrument Supply',
-    text: 'Precision testing and measuring instruments from globally recognized brands, with ready stock and fast delivery.',
-  },
-  {
-    icon: 'ScanSearch',
-    title: 'Industrial Audits',
-    text: 'Infrared thermography and compressed air audits aligned to ISO 11011 and ISO 8573 methodologies.',
-  },
-  {
-    icon: 'Users',
-    title: 'Technical Manpower',
-    text: 'Trained instrumentation technicians, engineers, and plant operators on flexible contracts.',
-  },
-  {
-    icon: 'Workflow',
-    title: 'Automation Solutions',
-    text: 'End-to-end support from instrument supply and calibration to commissioning and plant operations.',
-  },
-];
+export const aboutPreview = {
+  title: 'Engineering Accuracy. Improving Industrial Performance.',
+  text: [
+    'AB Flowgenix is an industrial technical services and instrumentation company focused on testing, measurement, calibration, inspection and audit solutions.',
+    'We support industries in identifying equipment abnormalities, measurement errors, energy losses and system inefficiencies through reliable testing and data-driven analysis.',
+  ],
+};
 
 export const whyChoose = [
   {
-    icon: 'Crosshair',
-    title: 'Precision & Accuracy',
-    text: 'Flowmeters with exceptional accuracy (±2%) for critical applications.',
+    icon: 'Wrench',
+    title: 'Technical Expertise',
+    text: 'Measurement, testing and audit work performed by engineers who understand industrial processes and instrumentation.',
+  },
+  {
+    icon: 'MapPin',
+    title: 'On-Site Service',
+    text: 'Testing and inspection carried out at your plant — with minimal disruption to running operations.',
+  },
+  {
+    icon: 'FileBarChart',
+    title: 'Data-Driven Reports',
+    text: 'Structured technical reports with measured data, findings, observations and clear recommendations.',
   },
   {
     icon: 'Layers',
-    title: 'Comprehensive Solutions',
-    text: 'A complete range for gases, air, water, steam, and other process media.',
+    title: 'Multi-Discipline Capability',
+    text: 'Process, electrical, utility and energy systems covered under one accountable service partner.',
   },
   {
-    icon: 'Flag',
-    title: 'Indian Manufacturing',
-    text: 'Proudly engineered and manufactured in India to global quality standards.',
+    icon: 'Gauge',
+    title: 'Instrumentation Support',
+    text: 'Supply and trading of process and test & measurement instruments to act on audit findings.',
   },
   {
-    icon: 'SlidersHorizontal',
-    title: 'Customization & Flexibility',
-    text: 'Tailored solutions to suit your specific industrial requirements.',
-  },
-  {
-    icon: 'Headset',
-    title: 'Reliable Support',
-    text: 'Dedicated service support from selection to commissioning.',
-  },
-  {
-    icon: 'ShieldCheck',
-    title: 'Robust Build Quality',
-    text: 'Designed for durability and high performance in tough environments.',
-  },
-  {
-    icon: 'Truck',
-    title: 'Fast Delivery',
-    text: 'Prompt manufacturing and supply to ensure minimum downtime.',
-  },
-  {
-    icon: 'HeartHandshake',
-    title: 'Customer-Centric Approach',
-    text: 'Your success is our priority — transparency, integrity, and commitment.',
+    icon: 'Factory',
+    title: 'Industrial Approach',
+    text: 'Practical, plant-floor understanding — solutions sized for real operating conditions, not lab assumptions.',
   },
 ];
 
 export const processSteps = [
   {
     step: '01',
-    title: 'Requirement Analysis',
-    text: 'We study your medium, line size, flow range, pressure, and temperature to understand the application precisely.',
+    title: 'Understand',
+    text: 'Understand your application, equipment and requirement.',
   },
   {
     step: '02',
-    title: 'Selection & Engineering',
-    text: 'Our team recommends the right measuring principle and configures the instrument for your process conditions.',
+    title: 'Inspect',
+    text: 'Inspect the system or equipment and identify testing requirements.',
   },
   {
     step: '03',
-    title: 'Precision Manufacturing',
-    text: 'Instruments are built in India with rigorous quality checks at every stage of production.',
+    title: 'Measure',
+    text: 'Perform measurements and testing using suitable instruments.',
   },
   {
     step: '04',
-    title: 'Testing & Calibration',
-    text: 'Every product is backed by rigorous testing, with calibration reports traceable to NABL standards.',
+    title: 'Analyze',
+    text: 'Analyze collected data and identify abnormalities, losses or deviations.',
   },
   {
     step: '05',
-    title: 'Delivery & Commissioning',
-    text: 'Prompt supply and dedicated support from installation through commissioning.',
+    title: 'Report',
+    text: 'Provide a structured technical report with findings.',
   },
   {
     step: '06',
-    title: 'Lifetime Support',
-    text: 'Ongoing service, calibration, audits, and technical manpower to keep your plant running.',
-  },
-];
-
-export const testimonials = [
-  {
-    quote:
-      'The instrumentation solutions from ABFlowgenix have enhanced our process control systems. Their engineering quality and responsiveness are truly commendable.',
-    name: 'Amit Verma',
-    role: 'Project Engineer, Larsen & Toubro Ltd, Mumbai',
-  },
-  {
-    quote:
-      'Outstanding performance and robust build quality. ABFlowgenix products have proven highly reliable for our process monitoring needs.',
-    name: 'Karan Patel',
-    role: 'Instrumentation Supervisor, JSW Steel',
-  },
-  {
-    quote:
-      'ABFlowgenix flowmeters have shown exceptional accuracy and consistency across our operations. Their focus on precision manufacturing makes them a reliable partner in process instrumentation.',
-    name: 'Rahul Deshmukh',
-    role: 'Senior Engineer, Thermax Ltd, Pune',
-  },
-  {
-    quote:
-      'We’ve been impressed by the performance and durability of ABFlowgenix flowmeters. The team provided timely delivery and excellent technical assistance during commissioning.',
-    name: 'Sneha Kulkarni',
-    role: 'Maintenance Head, Bharat Forge Ltd, Baramati',
+    title: 'Recommend',
+    text: 'Suggest corrective actions, improvements or instrumentation where required.',
   },
 ];
 
 export const faqs = [
   {
-    q: 'Which flowmeter technology is right for my application?',
-    a: 'It depends on the medium. Thermal mass meters suit gases, electromagnetic meters suit conductive liquids, oval gear meters handle viscous oils and fuels, turbine meters fit clean low-viscosity liquids, vortex meters cover steam and utilities, and ultrasonic meters offer non-invasive measurement. Share your medium, pipe size, and flow range through the quotation form and we will recommend the right instrument.',
+    q: 'Which audit or test does my plant need first?',
+    a: 'It depends on where your losses or risks are. Compressed-air leakage audits and thermal imaging surveys are common starting points because they are non-intrusive and typically pay back quickly. Tell us about your utilities and equipment through the enquiry form and we will recommend a sensible starting point.',
   },
   {
-    q: 'What output signals do ABFLOWGENIX flowmeters support?',
-    a: 'Depending on the model: 4–20 mA, pulse, RS-485 (Modbus RTU), HART, and relay outputs are available. Local LCD displays show instantaneous and totalized flow.',
+    q: 'Are your calibration services NABL-accredited?',
+    a: 'Calibration is carried out through NABL-accredited calibration facilities, under their respective accredited scopes. AB Flowgenix coordinates and supports the calibration process; we are not ourselves a NABL-accredited laboratory. Certificates are issued by the accredited facility with full traceability details.',
   },
   {
-    q: 'Are your calibration services traceable?',
-    a: 'Yes. Our calibration services cover flow, pressure, temperature, electrical, and level instruments, on-site and in the laboratory, with detailed reports traceable to NABL standards.',
+    q: 'Do your audits require a shutdown?',
+    a: 'Most of our testing — compressed-air leak detection, thermography, power quality logging — is performed on live, running systems without shutdown. Where a specific test needs isolation, we tell you in advance.',
   },
   {
-    q: 'Do you support installation and commissioning?',
-    a: 'Yes. We provide dedicated service support from product selection to commissioning, and can deploy trained instrumentation technicians and engineers for installation, maintenance, and plant operations.',
+    q: 'What do we receive after an audit or test?',
+    a: 'A structured technical report: measured data, findings (for example leak locations, hot spots, or power-quality parameters), observations and recommended corrective actions. Deliverables for each service are listed on its service page.',
   },
   {
-    q: 'Can instruments be customized for my process?',
-    a: 'Yes. Lining and electrode materials, end connections (threaded, flanged, tri-clamp), ingress protection ratings up to IP68, and explosion-proof options are available on applicable models.',
+    q: 'Do you also supply the instruments needed to fix findings?',
+    a: 'Yes. Alongside services, we supply and trade process instrumentation, flowmeters, electrical test instruments and thermal & acoustic instruments — selected against your application requirements and technical specifications.',
   },
   {
     q: 'Where do you operate?',
-    a: 'We are based in Pune, Maharashtra, India, and support process industries across the country with supply, calibration, audits, and manpower services.',
+    a: 'We are based in Pune, Maharashtra, India, and serve industrial plants across the region and beyond, depending on the scope of work.',
   },
 ];
 
 export const nav = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Products', to: '/products', childrenKey: 'products' },
+  { label: 'About Us', to: '/about' },
   { label: 'Services', to: '/services', childrenKey: 'services' },
+  { label: 'Instruments', to: '/instruments', childrenKey: 'instruments' },
   { label: 'Industries', to: '/industries' },
-  { label: 'Resources', to: '/resources' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Contact Us', to: '/contact' },
 ];

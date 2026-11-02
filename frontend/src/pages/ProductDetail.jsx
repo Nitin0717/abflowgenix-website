@@ -57,7 +57,7 @@ export default function ProductDetail() {
   return (
     <>
       <PageHero
-        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Products', to: '/products' }, { label: product.name }]}
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Instruments', to: '/instruments' }, { label: 'Flowmeters', to: '/instruments/flowmeters' }, { label: product.name }]}
         eyebrow={product.category}
         title={product.name}
         text={product.tagline}
@@ -134,11 +134,11 @@ export default function ProductDetail() {
               ))}
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
-                  to={`/contact?product=${product.slug}`}
+                  to={`/contact?instrument=${encodeURIComponent(product.name)}`}
                   data-testid="product-quote-button"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-gold px-7 py-3.5 font-bold text-navy-dark shadow-lg shadow-gold/20 transition-colors duration-300 hover:bg-navy hover:text-white"
                 >
-                  <FileText className="h-4 w-4" aria-hidden="true" /> Request a Quote
+                  <FileText className="h-4 w-4" aria-hidden="true" /> Enquire About This Product
                 </Link>
                 <span className="inline-flex items-center font-mono text-xs uppercase tracking-[0.18em] text-slate-400">
                   Priced on application — contact for price
@@ -183,7 +183,7 @@ export default function ProductDetail() {
           <div className="flex items-end justify-between gap-6">
             <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">Related products</h2>
             <Link
-              to="/products"
+              to="/instruments/flowmeters"
               className="hidden items-center gap-2 text-sm font-bold text-navy transition-colors hover:text-gold-hover sm:inline-flex"
             >
               Full catalogue <ArrowRight className="h-4 w-4" aria-hidden="true" />

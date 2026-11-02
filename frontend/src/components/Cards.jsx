@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, FileText } from 'lucide-react';
+import Icon from './Icon.jsx';
 
 export function ProductCard({ product, index = 0 }) {
   return (
@@ -37,11 +38,11 @@ export function ProductCard({ product, index = 0 }) {
             View details <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
           <Link
-            to={`/contact?product=${product.slug}`}
+            to={`/contact?instrument=${encodeURIComponent(product.name)}`}
             data-testid={`product-quote-${product.slug}`}
             className="ml-auto inline-flex items-center gap-1.5 text-sm font-semibold text-gold-hover transition-colors hover:text-navy"
           >
-            <FileText className="h-4 w-4" aria-hidden="true" /> Quote
+            <FileText className="h-4 w-4" aria-hidden="true" /> Enquire
           </Link>
         </div>
       </div>
@@ -49,23 +50,26 @@ export function ProductCard({ product, index = 0 }) {
   );
 }
 
-export function ServiceCard({ service }) {
+export function ServiceCard({ service, index = 0 }) {
   return (
     <article
       data-testid={`service-card-${service.slug}`}
       className="group relative flex flex-col bg-white border border-slate-200 rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl hover:shadow-navy/10"
     >
-      <div className="relative h-44 overflow-hidden bg-navy">
+      <Link to={`/services/${service.slug}`} className="relative block h-44 overflow-hidden bg-navy" tabIndex={-1} aria-hidden="true">
         <img
-          src={service.image}
-          alt={`${service.name} — illustration`}
-          loading="lazy"
+          src={service.heroImage}
+          alt={`${service.navLabel} — industrial illustration`}
+          loading={index > 2 ? 'lazy' : 'eager'}
           className="h-full w-full object-cover opacity-80 transition-transform duration-700 ease-out group-hover:scale-[1.06]"
         />
         <div className="absolute inset-0 bg-navy/30" aria-hidden="true" />
-      </div>
+        <span className="absolute bottom-3 left-4 grid h-10 w-10 place-items-center rounded-md bg-navy/85 text-gold backdrop-blur">
+          <Icon name={service.icon} className="h-5 w-5" />
+        </span>
+      </Link>
       <div className="flex flex-1 flex-col gap-3 p-6">
-        <h3 className="text-lg font-bold tracking-tight text-navy">
+        <h3 className="text-base font-bold tracking-tight text-navy md:text-lg">
           <Link to={`/services/${service.slug}`} className="transition-colors hover:text-gold-hover">
             {service.name}
           </Link>
@@ -76,7 +80,7 @@ export function ServiceCard({ service }) {
           data-testid={`service-view-${service.slug}`}
           className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-navy transition-colors hover:text-gold-hover"
         >
-          Explore service <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+          Explore Service <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
         </Link>
       </div>
     </article>
