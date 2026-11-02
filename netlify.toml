@@ -1,0 +1,4 @@
+[build]
+  base = "frontend"
+  command = "yarn install --frozen-lockfile --production=false && yarn build"
+  publish = "dist"
